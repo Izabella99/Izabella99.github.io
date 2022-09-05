@@ -1,12 +1,14 @@
 #header {
-    width: 100px;
     height: 100%;
     position: fixed;
     z-index: 1;
   }
+  
   #header .pro-sidebar {
+    width: 200px;
     height: 100vh;
   }
+ 
   #header .closemenu {
     color: #fff;
     position: absolute;
@@ -20,7 +22,6 @@
     background-color: #CD1928;
   }
   #header .pro-sidebar {
-    width: 100%;
     min-width: 100%;
   }
   #header .pro-sidebar.collapsed {
@@ -38,6 +39,7 @@
 
   #header .closemenu.collapsed{
     left:68px;
+    width: max-content;
   }
 
   #header .pro-sidebar-inner {

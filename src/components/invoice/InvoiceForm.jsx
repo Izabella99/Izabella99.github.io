@@ -168,7 +168,7 @@ class InvoiceForm extends React.Component {
     return (<Form onSubmit={this.openModal}>
       <Row  className="invoice">
       <Col />
-        <Col md={8} lg={9}>
+        <Col className="invoice-page" md={8} lg={9}>
           <Card className="pageToPrint p-4 p-xl-5 my-3 my-xl-4 ">
             <div className="header d-flex flex-row align-items-start justify-content-between mb-3">
                 <div className="d-flex flex-column">
@@ -223,17 +223,37 @@ class InvoiceForm extends React.Component {
             </div>
 
             <Row className="car-data mb-5">
-              <Form.Control placeholder={"Tip autovehicul"} rows={3} value={this.state.vehicleType} type="text" name="vehicleType" className="my-2" onChange={(event) => this.editField(event)}/>
-               <Col> 
-                <Form.Control placeholder={"Serie șasiu"} value={this.state.serial} type="text" name="serial" className="my-2" onChange={(event) => this.editField(event)} autoComplete="serial" />
-                <Form.Control placeholder={"Tip motor"} value={this.state.motorType} type="text" name="motorType" className="my-2" autoComplete="motorType" onChange={(event) => this.editField(event)} />
-              </Col>
               <Col>
-                <Form.Control placeholder={"Nr inamtriculare"} rows={2} value={this.state.licenseNumber} type="text" name="licenseNumber" className="my-2" onChange={(event) => this.editField(event)}autoComplete="licenseNumber"/>
-                <Form.Control placeholder={"An fabricație"} value={this.state.year} type="text" name="year" className="my-2" onChange={(event) => this.editField(event)} autoComplete="year" />
+                <Form.Group className="mb-3" controlId="formBasicTipAuto">
+                  <Form.Label>Tip autovehicul</Form.Label>
+                  <Form.Control rows={3} value={this.state.vehicleType} type="text" name="vehicleType" className="my-2" onChange={(event) => this.editField(event)}/>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicSerie">
+                  <Form.Label>Serie șasiu</Form.Label>
+                  <Form.Control value={this.state.serial} type="text" name="serial" className="my-2" onChange={(event) => this.editField(event)} autoComplete="serial" />
+                </Form.Group>
               </Col>
+
               <Col>
-                <Form.Control placeholder={"Index km"} rows={1} value={this.state.kmIndex} type="text" name="kmIndex" className="my-2" onChange={(event) => this.editField(event)}autoComplete="kmIndex"/>
+                <Form.Group className="mb-3" controlId="formBasicTipMotor">
+                  <Form.Label>Tip motor</Form.Label>
+                  <Form.Control value={this.state.motorType} type="text" name="motorType" className="my-2" autoComplete="motorType" onChange={(event) => this.editField(event)} />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicNr">
+                  <Form.Label>Nr inamtriculare</Form.Label>
+                  <Form.Control rows={2} value={this.state.licenseNumber} type="text" name="licenseNumber" className="my-2" onChange={(event) => this.editField(event)}autoComplete="licenseNumber"/>
+                </Form.Group>
+              </Col>
+
+               <Col>
+                <Form.Group className="mb-3" controlId="formBasicAn">
+                  <Form.Label>An fabricație</Form.Label>
+                  <Form.Control value={this.state.year} type="text" name="year" className="my-2" onChange={(event) => this.editField(event)} autoComplete="year" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicIndex">
+                  <Form.Label>Index km</Form.Label>
+                  <Form.Control rows={1} value={this.state.kmIndex} type="text" name="kmIndex" className="my-2" onChange={(event) => this.editField(event)}autoComplete="kmIndex"/>
+                </Form.Group>
               </Col>
             </Row>         
            
@@ -241,7 +261,7 @@ class InvoiceForm extends React.Component {
             <InvoiceItemMaterials onItemizedItemEdit={this.onItemizedItemEdit.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} currency={this.state.currency} matItems={this.state.matItems}/>
             <div className="subtitle"><h4>Detaliere manoperă</h4></div>
             <InvoiceItemManopera onItemizedItemEdit={this.onItemizedItemEdit.bind(this)} onRowAdd={this.handleAddEvent.bind(this)} currency={this.state.currency} manItems={this.state.manItems}/>
-            <Row className="mt-4 justify-content-end">
+            <Row className="mt-4 totals-table justify-content-end">
               <Col lg={6}>
                 <div className="d-flex flex-row align-items-start justify-content-between">
                   <span className="fw-bold">Subtotal:
@@ -256,11 +276,10 @@ class InvoiceForm extends React.Component {
                     <span className="small ">({this.state.taxRate || 0}%)</span>
                     {this.state.taxAmmount || 0} {this.state.currency}</span>
                 </div>
-                <hr/>
                 <div className="d-flex flex-row align-items-start justify-content-between" style={{
                     fontSize: '1.125rem'
                   }}>
-                  <span className="fw-bold">Total:
+                  <span className="fw-bold">TOTAL:
                   </span>
                   <span className="fw-bold">
                     {this.state.total || 0} {this.state.currency}</span>

@@ -2,7 +2,7 @@ import React from 'react';
 import SidebarMenu from './SidebarMenu';
 import InvoiceForm from './invoice/InvoiceForm';
 
-class Home extends React.Component {
+class Deviz extends React.Component {
     render() {
         return(
             <div>
@@ -13,4 +13,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default Deviz;

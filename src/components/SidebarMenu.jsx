@@ -41,7 +41,7 @@ const SidebarMenu = () => {
 
   return (
     <>
-      <div id="header">
+      <div id="header" className="header" collapsed={menuCollapse}>
       {menuCollapse ? (
         <div className="closemenu collapsed"onClick={menuIconClick}><MdKeyboardArrowRight/></div>
         ):(
@@ -71,10 +71,10 @@ const SidebarMenu = () => {
                 <Link to="/home" />
               </MenuItem>
               <MenuItem  icon={<HiDocumentText />} >
-                Comanda
-                <Link to="/comanda" />
+                Deviz
+                <Link to="/deviz" />
               </MenuItem>
-              <MenuItem icon={<HiDocumentText />}>Deviz</MenuItem>
+              <MenuItem icon={<HiDocumentText />}>Comanda</MenuItem>
               <MenuItem icon={<BiCog />}>Settings</MenuItem>
             </Menu>
           </SidebarContent>

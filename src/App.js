@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch,Redirect } from 'react-router-dom';
-import Comanda from './components/Comanda';
+import Deviz from './components/Deviz';
 import Home from './components/Home';
 
 
@@ -16,8 +16,8 @@ function App() {
       <Route path="/home">
         <Home/>
       </Route>
-      <Route path="/comanda">
-        <Comanda />
+      <Route path="/deviz">
+        <Deviz />
       </Route>
     </Switch>
   </BrowserRouter>

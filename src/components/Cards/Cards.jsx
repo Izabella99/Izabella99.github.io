@@ -13,8 +13,8 @@ export default class Cards extends Component {
   render() {
     
     const data=[
-      {id:1,title:"Comandă",link:"/comanda"},
-      {id:2,title:"Deviz",link:"/"},
+      {id:1,title:"Comandă",link:"/"},
+      {id:2,title:"Deviz",link:"/deviz"},
       {id:3,title:"Factură",link:"/"},
       {id:4,title:"ETC",link:"/"}];
   

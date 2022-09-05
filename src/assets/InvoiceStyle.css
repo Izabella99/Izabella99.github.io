@@ -25,7 +25,15 @@
 .car-data.mb-5.row{
     width: 100% !important;
     margin: auto !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 2rem 0 !important;
+}
+
+.car-data .mb-3{
+    margin: 0 !important;
+}
+
+.car-data .form-label{
+    font-weight: 700;
 }
 
 .nr-date span, .nr-date input{
@@ -54,6 +62,13 @@
 
 .material-table .button-add{
     width: 50px;
+    background-color: rgb(0, 55, 95);
+    border: none;
+}
+
+.material-table .btn-danger{
+    background-color: #CD1928;
+    border-color: #CD1928;;
 }
 
 h4{
@@ -78,12 +93,16 @@ table input{
 }
 .button-print{
     border-width: 2px;
-    border-color: #cb0303;
-    color: #cb0303;
+    border-color: #CD1928;
+    background-color: #CD1928;
+    color: white;
+    font-weight: 500;
+    
 }
 .button-print:hover{
-    border-color: #cb0303;
-    background-color: #cb0303;
+    border-color: #CD1928;
+    color: #CD1928;
+    background-color: transparent;
 }
 
 
@@ -124,6 +143,12 @@ table input{
 
 
 @media print {
+    @page {
+        margin: 0;
+    }
+    .pageToPrint, .invoice, .invoice-page{
+        border: none !important;
+    }
     .col-md-8{
         padding: 0;
     }
@@ -131,7 +156,6 @@ table input{
       width: 100%;
       top: 0;
       left: 0;
-      margin: 0 !important;
       page-break-inside: avoid;
     }
     .header{
@@ -140,7 +164,7 @@ table input{
     .logoholder img{
         width: 70px;
     }
-    .client-data .col input, .car-data .col input {
+    .client-data .col input, .car-data .col input , .car-data .form-label{
         margin-top: -3px!important;
         margin-bottom: 0!important;
         padding: 0px;
@@ -173,6 +197,9 @@ table input{
     input{
         border: none !important;
     }
-   
+   .totals-table{
+    width: 60%;
+    margin-left: auto;
+   }
 
 }
