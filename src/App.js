@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route, Switch,Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch,Redirect } from 'react-router-dom';
 import Comanda from './components/Comanda';
 import Home from './components/Home';
 
@@ -10,7 +10,7 @@ import Home from './components/Home';
 function App() {
   return (
  
-    <Router>
+    <BrowserRouter>
     <Switch>
       <Redirect exact from="/" to="/home" />
       <Route path="/home">
@@ -20,7 +20,7 @@ function App() {
         <Comanda />
       </Route>
     </Switch>
-  </Router>
+  </BrowserRouter>
   
 
        
