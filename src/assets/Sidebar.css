@@ -1,5 +1,5 @@
 #header {
-    width: 220px;
+    width: 100px;
     height: 100%;
     position: fixed;
     z-index: 1;
@@ -37,7 +37,7 @@
   }
 
   #header .closemenu.collapsed{
-    right:117px;
+    left:68px;
   }
 
   #header .pro-sidebar-inner {
