@@ -1,1 +1,1 @@
-This is the new app #2022
+This is the new app 2022
