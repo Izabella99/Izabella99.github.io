@@ -1,5 +1,5 @@
 {
-  "name": "service",
+  "name": "service-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -31,6 +31,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -58,12 +60,15 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Izabella99/service-app.git"
+    "url": "git+https://github.com/Izabella99/izabella99.github.io.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Izabella99/service-app/issues"
   },
-  "homepage": ""
+  "homepage": "https://izabella99.github.io/service-app/",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }
