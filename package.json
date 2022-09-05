@@ -1,5 +1,6 @@
 {
   "name": "service-app",
+  "homepage": "https://izabella99.github.io/service-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -67,7 +68,6 @@
   "bugs": {
     "url": "https://github.com/Izabella99/service-app/issues"
   },
-  "homepage": "https://izabella99.github.io/service-app/",
   "devDependencies": {
     "gh-pages": "^4.0.0"
   }
