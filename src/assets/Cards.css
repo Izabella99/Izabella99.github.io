@@ -92,3 +92,28 @@
     background: transparent;
     border-color: transparent;
   }
+
+
+
+
+  @media screen and (max-width: 600px) {
+    .cards {
+      justify-content: space-around;
+    }
+    .dashboard-card {
+      width: 7em;
+    }
+    .dashboard-card-body {
+      padding: 0.6em;}
+
+    .dashboard-card h2{
+      font-size: 1em;
+    }
+
+    .dashboard-card-body .icon{
+      font-size: 35px;
+    margin: 10px 0 20px 0;
+    }
+
+
+  }

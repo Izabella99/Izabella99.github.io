@@ -10,3 +10,11 @@
 .dashboard-right{
     padding-left:1.5rem;
 }
+
+@media screen and (max-width: 600px) {
+.dashboard-middle{
+    width: 80%;
+    margin-left: 20%;
+    margin-top: 4px !important;
+}
+}
