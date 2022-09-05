@@ -1,0 +1,178 @@
+.pageToPrint{
+    padding-top: 10px !important;
+}
+.header{
+    margin-bottom: 0 !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    font-size: 15px;
+}
+
+.invoice.row{--bs-gutter-x: 0rem;}
+
+.client-data.mb-5 label{
+    font-size: 15px;
+}
+
+.client-data.mb-5.row{
+    margin-bottom: 1rem!important;
+    width: 50%;
+}
+
+.client-data .col input, .car-data .col input {
+    font-size: 15px;
+}
+.car-data.mb-5.row{
+    width: 100% !important;
+    margin: auto !important;
+    margin-bottom: 2rem !important;
+}
+
+.nr-date span, .nr-date input{
+    font-size: 15px;
+}
+
+.material-table{
+    margin-bottom: 2rem !important;
+}
+
+.material-table .table,.manopera-table .table{
+    margin-bottom: 1px;
+}
+.material-table .table th,
+.material-table .table td,
+.manopera-table .table th,
+.manopera-table .table td{
+    padding: 1px;
+    font-weight: 400;
+    font-size: 15px;
+}
+.material-table .table input,
+.manopera-table .table input{
+    padding: 1px;
+}
+
+.material-table .button-add{
+    width: 50px;
+}
+
+h4{
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 18px;
+}
+h5{
+    font-size: 13px;
+}
+
+tbody tr{
+    border-color: transparent;
+}
+table input{
+    margin: 8px 5px 0 0 !important;
+}
+.sticky-top{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button-print{
+    border-width: 2px;
+    border-color: #cb0303;
+    color: #cb0303;
+}
+.button-print:hover{
+    border-color: #cb0303;
+    background-color: #cb0303;
+}
+
+
+
+@media screen and (max-width: 970px) {
+    .header p {
+      font-size: 12px;
+    }
+    .client-data.mb-5.row{
+        width:70%;
+    }
+}
+
+@media screen and (min-width:600px ) and (max-width:768px )  {
+    .invoice.row{
+        width: 90%;
+        margin-left: auto;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .material-table .button-add{
+        width: 30px;
+    }
+    .client-data.mb-5.row{
+        width:100%;
+    }
+    .pageToPrint{
+        width: 80%;
+        margin-left: auto;
+    }
+    .col {
+         flex: unset;
+    }
+
+}
+
+
+@media print {
+    .col-md-8{
+        padding: 0;
+    }
+    .card{
+      width: 100%;
+      top: 0;
+      left: 0;
+      margin: 0 !important;
+      page-break-inside: avoid;
+    }
+    .header{
+        font-size: 12px; 
+    }
+    .logoholder img{
+        width: 70px;
+    }
+    .client-data .col input, .car-data .col input {
+        margin-top: -3px!important;
+        margin-bottom: 0!important;
+        padding: 0px;
+        font-size: 12px;
+    }
+    .client-data.mb-5.row {
+        margin-bottom: none!important;
+    }
+    .subtitle h4{
+        font-size: 15px;
+    }
+
+    .material-table .table th,
+    .material-table .table td,
+    .manopera-table .table th,
+    .manopera-table .table td,
+    .material-table .table input,
+    .manopera-table .table input{
+    font-size: 12px;
+}
+    .button-add,.button-remove,.sticky-top{
+        display: none;
+    }
+
+
+    h5{
+        font-size: 10px;
+    }
+
+    input{
+        border: none !important;
+    }
+   
+
+}
