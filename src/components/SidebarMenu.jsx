@@ -41,7 +41,7 @@ const SidebarMenu = () => {
 
   return (
     <>
-      <div id="header" className="header" collapsed={menuCollapse}>
+      <div id="header" className="header">
       {menuCollapse ? (
         <div className="closemenu collapsed"onClick={menuIconClick}><MdKeyboardArrowRight/></div>
         ):(
@@ -56,7 +56,7 @@ const SidebarMenu = () => {
           <div className="logo">
               {/* small and big change using menucollapse state */}
               {menuCollapse ? 
-              (<img src={logo} style={{maxWidth: '50px'}} alt="logo"/>)
+              (<img src={logo} style={{maxWidth: '46px'}} alt="logo"/>)
               :
               (<img src={logo} style={{maxWidth: '100px'}} alt="logo"/>)
               }
