@@ -135,6 +135,7 @@ table input{
     .pageToPrint{
         width: 88%;
         margin-left: auto;
+        margin-top: 0rem !important;
     }
     .col {
          flex: unset;
