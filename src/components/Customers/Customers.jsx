@@ -1,25 +1,35 @@
 import React, {useState, useEffect} from 'react';
+import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
+import Card from 'react-bootstrap/Card';
+import 'reactjs-popup/dist/index.css';
+import '../../assets/Customers.css';
+import NewCustomer from './NewCustomer';
+import {MdAddCircleOutline} from "react-icons/md";
+
+
 
 function Customers() {
   const [customers, setCustomers] = useState(false);
+  const [modalShow, setModalShow] = React.useState(false);
+ 
   useEffect(() => {
     getCustomer();
   }, []);
+
   function getCustomer() {
     fetch('http://localhost:3001')
       .then(response => {
-        return response.text();
+        return response.json();
+     
       })
       .then(data => {
         setCustomers(data);
       });
   }
-  function createCustomer() {
-    let name = prompt('Enter customer name');
-    let cnpcui = prompt('Enter customer cnpcui');
-    let address = prompt('Enter customer address');
-    let phone = prompt('Enter customer phone');
 
+  function createCustomer(name,cnpcui,address,phone) {
+    
     fetch('http://localhost:3001/customers', {
       method: 'POST',
       headers: {
@@ -35,27 +45,53 @@ function Customers() {
         getCustomer();
       });
   }
-  function deleteCustomer() {
-    let id = prompt('Enter customer id');
-    fetch(`http://localhost:3001/customers/${id}`, {
-      method: 'DELETE',
-    })
-      .then(response => {
-        return response.text();
-      })
-      .then(data => {
-        alert(data);
-        getCustomer();
-      });
+
+  const childToParent = (name,cnpcui,address,phone) => {
+
+    console.log(name, cnpcui,address,phone);
+    createCustomer(name,cnpcui,address,phone);
   }
+
   return (
-    <div>
-      {customers ? customers : 'There is no customer data available'}
-      <br />
-      <button onClick={createCustomer}>Add customer</button>
-      <br />
-      <button onClick={deleteCustomer}>Delete customer</button>
-    </div>
+    <>
+    <Card className="customers-table-container p-4 p-xl-5 my-3 my-xl-4 ">
+      <h1>Clienti</h1>
+      <Button className="add-client modal-toggle" variant="contained" onClick={() =>{ setModalShow(true);}}><MdAddCircleOutline/>Adauga client nou</Button>
+      <Table className='customers-table' hover responsive>  
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>NUME</th>
+            <th>CNP/CUI</th>
+            <th>ADRESA</th>
+            <th>NR. TELEFON</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.values(customers).map((customer, index) => {
+            return (
+            <>
+              <tr>
+                <td>{customer.id}</td>
+                <td style={{fontWeight:700}}>{customer.name}</td>
+                <td>{customer.cnpcui}</td>
+                <td>{customer.address}</td>
+                <td>{customer.phone}</td>
+              </tr>
+            </>
+            );
+          })
+          } 
+        </tbody>
+      </Table>
+    </Card>
+    <NewCustomer
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        childToParent={childToParent}
+      />
+    </>
+    
   );
 }
 export default Customers;

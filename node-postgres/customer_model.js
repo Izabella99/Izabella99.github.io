@@ -17,6 +17,7 @@ const getCustomer = () => {
       })
     }) 
   }
+
   const createCustomer = (body) => {
     return new Promise(function(resolve, reject) {
       
@@ -25,7 +26,7 @@ const getCustomer = () => {
         if (error) {
           reject(error)
         }
-        resolve(`A new customer has been added added:${results.rows[0]}`)
+        resolve(`A new customer has been successfully added`)
       })
     })
   }
@@ -43,5 +44,5 @@ const getCustomer = () => {
   module.exports = {
     getCustomer,
     createCustomer,
-    deleteCustomer,
+    deleteCustomer
   }

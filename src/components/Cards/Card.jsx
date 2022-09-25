@@ -10,10 +10,16 @@ export default class Card extends Component {
     return (
       <div className="dashboard-card" >
         <Link to={this.props.link} className="btn btn-primary">
-        <div className="dashboard-card-body">
-        <HiOutlineDocumentText className="icon" />
-          <h2>{this.props.title}</h2>
-        </div></Link>
+          <div className="dashboard-card-body">
+            <div className="circle">
+              {this.props.title=="Clienți"
+                  ? <p>{this.props.customersNo}</p>
+                  : <HiOutlineDocumentText className="icon" />
+              }
+            </div>
+            <h2>{this.props.title}</h2>
+          </div>
+        </Link>
       </div>
     );
   }

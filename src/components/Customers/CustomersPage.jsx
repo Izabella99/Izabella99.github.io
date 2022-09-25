@@ -8,11 +8,11 @@ import Col from 'react-bootstrap/Col';
 class Home extends React.Component {
     render() {
         return(
-            <Row  className="customers-page">
+            <Row  className="customers-page" style={{marginRight:0}}>
                 <Col md={1} lg={1}>
                    <SidebarMenu/>
                 </Col>
-                <Col className="customers" md={8} lg={8}>
+                <Col className="customers" md={11} lg={11}>
                     <Customers/>
                 </Col>
                 

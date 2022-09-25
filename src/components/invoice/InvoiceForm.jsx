@@ -8,13 +8,14 @@ import Card from 'react-bootstrap/Card';
 import InvoiceItemMaterials from './InvoiceItemMaterials';
 import InvoiceItemManopera from './InvoiceItemManopera';
 import logo from '../../logo.jpg'; 
+import CustomersDropdown from './CustomersDropdown';
 import '../../assets/InvoiceStyle.css';
+
 
 class InvoiceForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false,
       currency: 'Lei',
       currentDate: '',
       invoiceNumber: 1,
@@ -34,6 +35,11 @@ class InvoiceForm extends React.Component {
       subTotal: '0.00',
       taxRate: '19',
       taxAmmount: '0.00',
+      customerId:'',
+      selectedCustomerName:'',
+      selectedCustomerCnpcui:'',
+      selectedCustomerAddress:'',
+      selectedCustomerPhone:'',
     };
     this.state.matItems = [
       {
@@ -157,17 +163,42 @@ class InvoiceForm extends React.Component {
     });
     this.handleCalculateTotal();
   };
+
+  handleCallback = (childData) =>{
+    this.setState({customerId: childData})
+}
+  hadleSelectedCustomer=(x,y,z,u)=>{
+    this.setState({
+      selectedCustomerName:x,
+      selectedCustomerCnpcui:y,
+      selectedCustomerAddress:z,
+      selectedCustomerPhone:u,
+    })
+
+  }
  
-  openModal = (event) => {
-    event.preventDefault()
-    this.handleCalculateTotal()
-    this.setState({isOpen: true})
-  };
-  closeModal = (event) => this.setState({isOpen: false});
   render() {
-    return (<Form onSubmit={this.openModal}>
+    const {customerId} = this.state;
+    {if(customerId!== ""){
+      this.state.billTo=this.state.selectedCustomerName
+      this.state.billToCNP=this.state.selectedCustomerCnpcui 
+      this.state.billToAddress=this.state.selectedCustomerAddress
+      this.state.billToPhone=this.state.selectedCustomerPhone
+    }}
+
+    return (
+    <Form>
       <Row  className="invoice">
-      <Col />
+      <Col className="utilities" >
+        <div className="sticky-top pt-md-3 pt-xl-4">
+          <Form.Label className="fw-bold">Deviz clientului:</Form.Label>
+          <CustomersDropdown parentCallback = {this.handleCallback}  passSelectedCustomer={this.hadleSelectedCustomer}/> 
+          <Button variant="outline-primary" className="button-print d-block w-100 mt-3 mt-md-0"  onClick={() => window.print()}>
+                  Save & Print
+          </Button>
+        </div>
+        
+      </Col>
         <Col className="invoice-page" md={8} lg={9}>
           <Card className="pageToPrint p-4 p-xl-5 my-3 my-xl-4 ">
             <div className="header d-flex flex-row align-items-start justify-content-between mb-3">
@@ -301,16 +332,7 @@ class InvoiceForm extends React.Component {
               </div>
             </div>
           </Card>
-        </Col>
-
-        <Col>
-          <div className="sticky-top pt-md-3 pt-xl-4">
-          <Button variant="outline-primary" className="button-print d-block w-100 mt-3 mt-md-0"  onClick={() => window.print()}>
-                  Save & Print
-          </Button>
-          </div>
-        </Col>
-        
+        </Col> 
       </Row>
     </Form>)
   }

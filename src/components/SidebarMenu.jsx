@@ -19,7 +19,7 @@ import { FiLogOut} from "react-icons/fi";
 import { MdKeyboardArrowRight,MdKeyboardArrowLeft} from"react-icons/md";
 import { HiDocumentText } from "react-icons/hi";
 import { BiCog } from "react-icons/bi";
-
+import { BsPeopleFill} from "react-icons/bs";
 
 //import sidebar css from react-pro-sidebar module and our custom css 
 import "react-pro-sidebar/dist/css/styles.css";
@@ -73,6 +73,10 @@ const SidebarMenu = () => {
               <MenuItem  icon={<HiDocumentText />} >
                 Deviz
                 <Link to="/deviz" />
+              </MenuItem>
+              <MenuItem  icon={<BsPeopleFill />} >
+                Customers
+                <Link to="/customers" />
               </MenuItem>
               <MenuItem icon={<HiDocumentText />}>Comanda</MenuItem>
               <MenuItem icon={<BiCog />}>Settings</MenuItem>

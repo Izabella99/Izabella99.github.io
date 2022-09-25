@@ -1,0 +1,45 @@
+.add-client{
+    display: block;
+    margin: 0 0 0 auto;
+    background-color: #CD1928;;
+    color: white;
+    border-radius: 0.35rem;
+    font-weight:500;
+}
+
+.add-client svg{
+    margin-right: 5px;
+    font-size: 1.3rem;
+}
+
+.customers-table-container{
+    width: 90%;
+    height: 640px;
+    background-color: transparent;
+    border: none;
+    padding:0 !important
+}
+
+.customers-table-container .table-responsive{
+    margin-top: 30px;
+}
+.customers-table{
+
+    overflow: scroll;
+    border-collapse: separate;
+    border-spacing:0 5px;
+    color: #575757;
+    padding: 0.5rem 1rem;
+}
+
+.customers-table thead{
+    position: sticky;
+    top: 0;
+}
+.customers-table tr{
+    border-radius: 31px;
+    background-color:white;
+}
+
+
+

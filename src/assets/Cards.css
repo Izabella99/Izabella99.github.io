@@ -27,39 +27,53 @@
     margin: 1em 0;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
+    box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 1px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
     transition: all ease 200ms;
   }
 
-  .dashboard-card:nth-child(1) {
-    background: rgb(0, 55, 95);
-  }
-  .dashboard-card:nth-child(2) {
-    background: #CD1928;
-  }
-  .dashboard-card:nth-child(3) {
-    background: rgb(172, 155, 137);
-  }
-  .dashboard-card:nth-child(4) {
-    background: rgb(197, 197, 197);
-  }
   
   .dashboard-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12), 0 8px 32px -8px hsla(0, 0%, 0%, 0.14), 0 -6px 32px -6px hsla(0, 0%, 0%, 0.02);
+    transform: scale(1.06);
+  }
+  .dashboard-card:hover ,.btn:hover{
+    background-color: #fff !important;
+    border: none !important;
   }
   
+  .circle{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: auto auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+  .dashboard-card:nth-child(1) .circle {
+    background: rgba(0, 55, 95, 0.300);
+  }
+  .dashboard-card:nth-child(2) .circle{
+    background: rgb(205,25,40,0.300);
+  }
+  .dashboard-card:nth-child(3) .circle{
+    background: rgb(172, 155, 137,0.300);
+  }
+  .dashboard-card:nth-child(4) .circle{
+    background: rgb(197,197,197,0.300);
+  }
+
   .dashboard-card img {
     width: 100%;
     object-fit: cover;
   }
   
   .dashboard-card h2 {
-    color: #fff;
+    color: rgb(60, 60, 60);
     margin-top: -0.2em;
     line-height: 1.4;
     font-size: 1.3em;
-    font-weight: 500;
+    font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     transition: all ease-in 100ms;
   }
@@ -82,9 +96,25 @@
     text-align: center;
   }
   .dashboard-card-body .icon{
-    font-size: 50px;
-    margin: 10px 0 30px 0;
-    color: #fff;
+    font-size: 40px;
+    margin: 20px auto;
+  }
+  .dashboard-card-body p {
+    font-size: 35px;
+    margin: 30px auto;
+  }
+
+  .dashboard-card:nth-child(1) .dashboard-card-body .icon {
+    color: rgba(0, 55, 95);
+  }
+  .dashboard-card:nth-child(2) .dashboard-card-body .icon{
+    color: #CD1928;
+  }
+  .dashboard-card:nth-child(3) .dashboard-card-body .icon, .dashboard-card-body p {
+    color: rgb(172, 155, 137);
+  }
+  .dashboard-card:nth-child(4) .dashboard-card-body .icon{
+    color: rgb(197,197,197);
   }
 
   .dashboard-card .btn-primary{

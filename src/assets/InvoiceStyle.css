@@ -7,8 +7,41 @@
     justify-content: space-around !important;
     font-size: 15px;
 }
+.utilities .sticky-top{
+    z-index: 0;
+    width: 70%;
+    margin: 8% auto;
+}
 
-.invoice.row{--bs-gutter-x: 0rem;}
+.utilities .form-select:focus {
+    border-color: rgb(0, 55, 95);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(0, 55, 95 / 25%);
+}
+
+option:checked, option:hover , option:focus{
+    background-color: rgb(0, 55, 95) !important;
+    outline: 0;
+ color: white;
+}
+.button-print{
+    border-width: 2px;
+    border-color: #CD1928;
+    background-color: #CD1928;
+    color: white;
+    font-weight: 500;
+    margin-top: 1rem!important;
+    
+}
+.button-print:hover{
+    border-color: #CD1928 !important;
+    color: #CD1928 !important;
+    background-color: transparent !important;
+}
+
+.invoice.row{
+    --bs-gutter-x: 0rem;
+}
 
 .client-data.mb-5 label{
     font-size: 15px;
@@ -87,33 +120,19 @@ tbody tr{
 table input{
     margin: 8px 5px 0 0 !important;
 }
-.sticky-top{
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.button-print{
-    border-width: 2px;
-    border-color: #CD1928;
-    background-color: #CD1928;
-    color: white;
-    font-weight: 500;
-    
-}
-.button-print:hover{
-    border-color: #CD1928;
-    color: #CD1928;
-    background-color: transparent;
-}
 
 
 
-@media screen and (max-width: 970px) {
+
+@media screen and (min-width: 769px) {
     .header p {
       font-size: 12px;
     }
     .client-data.mb-5.row{
         width:70%;
+    }
+    .invoice.row{
+        margin: 0 50px 0 50px;
     }
 }
 
